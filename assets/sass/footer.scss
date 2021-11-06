@@ -8,7 +8,7 @@ footer {
         padding:3rem;
     }
 
-    .container, .col-12 {
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -26,7 +26,7 @@ footer {
 
             @media screen and (max-width: 450px) {
                 flex-direction: column;
-                white-align: center;
+                text-align: center;
             }
 
             li {
@@ -66,7 +66,7 @@ footer {
         padding-top:2em;
 
         @media screen and (max-width: 991px) {
-            white-align: center;
+            text-align: center;
         }
         
         span {

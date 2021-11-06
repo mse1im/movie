@@ -12,7 +12,7 @@ footer {
   }
 }
 
-footer .container, footer .col-12 {
+footer .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +47,7 @@ footer .menu ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    white-align: center;
+    text-align: center;
   }
 }
 
@@ -85,7 +85,7 @@ footer .copyright {
 
 @media screen and (max-width: 991px) {
   footer .copyright {
-    white-align: center;
+    text-align: center;
   }
 }
 

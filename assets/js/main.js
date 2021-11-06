@@ -25,9 +25,11 @@ window.addEventListener("load",() =>{
     }
 })
 
-var myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute']);
+let myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute','ngAnimate']);
 
-myDemoStreaming.config(['$routeProvider', function($routeProvider) {
+myDemoStreaming.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
+
+    $locationProvider.html5Mode(true);
 
     $routeProvider
     .when('/home', {
@@ -55,12 +57,11 @@ myDemoStreaming.config(['$routeProvider', function($routeProvider) {
 }]);
 
 myDemoStreaming.controller('myDemoStreaming', ['$scope', function($scope){
-    
 
 }])
 
 myDemoStreaming.controller('moviesController', ['$scope', function($scope){
-
+    let isim = 'mehmet';
 }])
 
 myDemoStreaming.controller('seriesController', ['$scope', function($scope){
