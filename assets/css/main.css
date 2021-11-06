@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url("../lib/bootstrap/css/bootstrap-grid.min.css");
+@import url("reset.css");
+@import url("variables.css");
+@import url("header.css");
+@import url("footer.css");
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+main .navbar {
+  background-color: var(--navbar);
+  height: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+main .navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background: var(--shadow);
+}
+
+main .navbar h2 {
+  color: var(--white);
+  font-size: var(--fontl);
+}
+
+main .content {
+  position: relative;
+  padding-top: 3em;
+}
+
+main .content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: var(--shadow);
+}
+
+main .content .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+}
+/*# sourceMappingURL=main.css.map */

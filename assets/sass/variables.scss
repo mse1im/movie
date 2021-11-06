@@ -1,0 +1,33 @@
+:root {
+    --primary: #0097fe;
+    --primary-gradient: linear-gradient(180deg, #0097fe, #0166fc);
+    --body: #ffffff;
+    --navbar: #414141;
+    --footer: #1e1e1e;
+    --body:#ffffff;
+    --text:white;
+    --white:white;
+    --black:white;
+    --shadow: linear-gradient(0deg, #ffffff00, rgba(0, 0, 0, 0.5));
+    --black:black;
+    --fontsm: 16px;
+    --fontm: 20px;
+    --fontlg: 25px;
+    --body-fonts: "Open Sans", sans-serif;
+    --font: 1.6rem;
+    --fontd: 10px;
+    --fonts: 1.4rem;
+    --fontm: 1.5rem;
+    --fontl: 1.8rem;
+    --fontxl: 2.6rem;
+}
+
+[data-theme="dark"] {
+    --primary: orange;
+    --primary-gradient: linear-gradient(180deg, orange, yellow);
+    --body: #414141;
+    --shadow: transparent;
+    --text:black;
+    --navbar: #1e1e1e;
+    --footer: #1e1e1e;
+}

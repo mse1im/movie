@@ -1,0 +1,132 @@
+footer {
+  background-color: var(--footer);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: 215px;
+}
+
+@media screen and (max-width: 991px) {
+  footer {
+    height: auto;
+    padding: 3rem;
+  }
+}
+
+footer .container, footer .col-12 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+}
+
+footer .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 991px) {
+  footer .menu ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer .menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    white-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer .menu ul li {
+    margin-top: 1rem;
+  }
+}
+
+footer .menu ul li:not(:first-child)::before {
+  content: '|';
+  color: var(--white);
+  opacity: 0.4;
+  margin: 0 2rem 0 2rem;
+}
+
+@media screen and (max-width: 450px) {
+  footer .menu ul li:not(:first-child)::before {
+    content: '';
+    margin: 0;
+  }
+}
+
+footer .menu ul li a {
+  color: var(--white);
+}
+
+footer .menu ul li a:hover {
+  opacity: 0.6;
+}
+
+footer .copyright {
+  padding-top: 2em;
+}
+
+@media screen and (max-width: 991px) {
+  footer .copyright {
+    white-align: center;
+  }
+}
+
+footer .copyright span {
+  color: var(--white);
+}
+
+footer .social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 991px) {
+  footer .social-media {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+footer .social-media .apps ul, footer .social-media .app ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  footer .social-media .apps ul, footer .social-media .app ul {
+    margin-top: 1em;
+  }
+}
+
+footer .social-media .apps ul li:not(:last-child), footer .social-media .app ul li:not(:last-child) {
+  margin-right: 2rem;
+}
+/*# sourceMappingURL=footer.css.map */

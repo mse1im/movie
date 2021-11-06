@@ -1,0 +1,104 @@
+footer {
+    background-color: var(--footer);
+    flex-shrink: 0;
+    height: 215px;
+
+    @media screen and (max-width: 991px) {
+        height: auto;
+        padding:3rem;
+    }
+
+    .container, .col-12 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+    }
+
+    .menu {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            @media screen and (max-width: 991px) {
+                justify-content: center;
+            }
+
+            @media screen and (max-width: 450px) {
+                flex-direction: column;
+                white-align: center;
+            }
+
+            li {
+
+                @media screen and (max-width: 450px) {
+                    margin-top:1rem;
+                }
+
+                &:not(:first-child) {
+
+                    &::before {
+                        content: '|';
+                        color: var(--white);
+                        opacity: 0.4;
+                        margin: 0 2rem 0 2rem;
+
+                        @media screen and (max-width: 450px) {
+                            content: '';
+                            margin:0;
+                        }
+                    }
+                }
+
+                a {
+                    color: var(--white);
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+
+        padding-top:2em;
+
+        @media screen and (max-width: 991px) {
+            white-align: center;
+        }
+        
+        span {
+            color: var(--white);
+        }
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+        }
+
+        .apps, .app {
+            ul {
+                display: flex;
+                justify-content: center;
+
+                @media screen and (max-width: 991px) {
+                    margin-top:1em;
+                }
+
+                li {
+                    &:not(:last-child) {
+                        margin-right: 2rem;
+                    }
+
+                    a {}
+                }
+            }
+        }
+    }
+}
