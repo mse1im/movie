@@ -34,10 +34,14 @@ window.addEventListener("load", () => {
     function themeSchema() {
         if (localStorage.getItem("themeSchema") == "dark") {
             currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
-            checkBox.checked = true;
+            checkBox.forEach(item => {
+                item.checked = true;
+            })
         } else {
             currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
-            checkBox.checked = false;
+            checkBox.forEach(item => {
+                item.checked = false;
+            })
         }
     }
 })
@@ -72,13 +76,23 @@ myDemoStreaming.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 myDemoStreaming.controller('moviesController',['$scope','$http',function($scope,$http){
+    $scope.loaded = false;
     $http.get("assets/data/data.json").then(function(res){
-        $scope.myDemoStreaming = res.data[0].entries;
+    $scope.myDemoStreaming = res.data[0].entries;
+    $scope.length = res.data[0].entries.length;
+    $scope.loaded = true;
+    }).catch(err => {
+        $scope.error = "Oops something went wrong...";
     })
 }])
 
 myDemoStreaming.controller('seriesController',['$scope','$http',function($scope,$http){
+    $scope.loaded = false;
     $http.get("assets/data/data.json").then(function(res){
-        $scope.myDemoStreaming = res.data[0].entries;
+    $scope.myDemoStreaming = res.data[0].entries;
+    $scope.length = res.data[0].entries.length;
+    $scope.loaded = true;
+    }).catch(err => {
+        $scope.error = "Oops something went wrong...";
     })
 }])

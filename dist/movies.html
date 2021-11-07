@@ -5,7 +5,9 @@
 </div>
 <section class="content">
     <div class="container">
-        <div class="box d-flex flex-wrap justify-content-between">
+        <div ng-if="error" style="color:black">{{error}}</div>
+        <div ng-if="!loaded && !error" style="color:black">Loading...</div>
+        <div class="box d-flex flex-wrap justify-content-between" ng-if="loaded">
             <div class="movies mx-2" ng-repeat="movie in myDemoStreaming | orderBy:'title'" ng-if="movie.releaseYear >= 2010 && movie.programType == 'movie'" ng-show=movie>
                 <a href="#!movies">
                     <div class="box-content mt-5" >
