@@ -8,7 +8,7 @@
         <div ng-if="error" style="color:black">{{error}}</div>
         <div ng-if="!loaded && !error" style="color:black">Loading...</div>
         <div class="box d-flex flex-wrap justify-content-between" ng-if="loaded">
-            <div class="series mx-2" ng-repeat="serie in myDemoStreaming | orderBy:'title'" ng-if="serie.releaseYear >= 2010 && serie.programType == 'series'" ng-show=serie>
+            <div class="series mx-2" ng-repeat="serie in myDemoStreaming | orderBy:'title' | limitTo: 21" ng-if="serie.releaseYear >= 2010 && serie.programType == 'series'" ng-show=serie>
                 <a href="#!series">
                     <div class="box-content mt-5" >
                         <img src="{{serie.images.PosterArt.url}}" alt="{{serie.title}}">
