@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
     }
 })
 
-let myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute']);
+let myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute','ngAnimate']);
 
 myDemoStreaming.config(['$routeProvider', function ($routeProvider) {
 

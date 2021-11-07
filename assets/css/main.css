@@ -10,6 +10,16 @@ main {
           flex: 1 0 auto;
 }
 
+main.ng-enter {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+
+main.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
 main .navbar {
   background-color: var(--navbar);
   height: 60px;
