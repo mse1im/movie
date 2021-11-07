@@ -1,77 +1,83 @@
-window.addEventListener("load",() =>{
-    const checkBox = document.getElementById("switchCheck");
+window.addEventListener("load", () => {
+    const checkBox = document.querySelectorAll(".switchCheck");
     const currentTheme = document.querySelector("html");
+    let hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
+    let mobileNav = document.getElementsByClassName("nav-mobile")[0];
 
-    themeSchema();
-    
-    checkBox.addEventListener("click", function () {
-        if (checkBox.checked) {
-            localStorage.setItem("themeSchema","dark");
-            currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
+    /* hamburger-menu */
+    hamburgerMenu.addEventListener("click", () => {
+
+        if (hamburgerMenu.classList.contains("open")) {
+            mobileNav.classList.remove("d-block")
+            mobileNav.classList.add("d-none")
+            hamburgerMenu.classList.remove("open");
         } else {
-            localStorage.setItem("themeSchema","light");
-            currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
+            hamburgerMenu.classList.add("open");
+            mobileNav.classList.remove("d-none")
+            mobileNav.classList.add("d-block")
         }
     })
+    themeSchema();
 
-    function themeSchema(){
-        if(localStorage.getItem("themeSchema") == "dark"){
-            currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema") );
+    checkBox.forEach(item => {
+        item.addEventListener("click", function () {
+            if (item.checked) {
+                localStorage.setItem("themeSchema", "dark");
+                currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
+            } else {
+                localStorage.setItem("themeSchema", "light");
+                currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
+            }
+        })
+    })
+
+    function themeSchema() {
+        if (localStorage.getItem("themeSchema") == "dark") {
+            currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
             checkBox.checked = true;
-        }else {
+        } else {
             currentTheme.setAttribute("data-theme", localStorage.getItem("themeSchema"));
             checkBox.checked = false;
         }
     }
 })
 
-let myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute','ngAnimate']);
+let myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute']);
 
-myDemoStreaming.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
-
-    $locationProvider.html5Mode(true);
+myDemoStreaming.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-    .when('/home', {
-        templateUrl: '/dist/home.html'
-    })
-    .when('/movies', {
-        templateUrl: '/dist/movies.html',
-        controller: 'moviesController'
-    })
-    .when('/series', {
-        templateUrl: '/dist/series.html',
-        controller: 'seriesController'
-    })
-    .when('/error', {
-        templateUrl: '/dist/error.html',
-        controller: 'errorController'
-    })
-    .when('/loading', {
-        templateUrl: '/dist/loading.html',
-        controller: 'loadingController'
-    }).otherwise({
-        redirectTo: '/home'
-    });
+        .when('/home', {
+            templateUrl: '/dist/home.html',
+            controller: 'homeController'
+        })
+        .when('/movies', {
+            templateUrl: '/dist/movies.html',
+            controller: 'moviesController'
+        })
+        .when('/series', {
+            templateUrl: '/dist/series.html',
+            controller: 'seriesController'
+        })
+        .when('/error', {
+            templateUrl: '/dist/error.html',
+            controller: 'errorController'
+        })
+        .when('/loading', {
+            templateUrl: '/dist/loading.html',
+            controller: 'loadingController'
+        }).otherwise({
+            redirectTo: '/home'
+        });
 
 }]);
 
-myDemoStreaming.controller('myDemoStreaming', ['$scope', function($scope){
-
+myDemoStreaming.controller('moviesController',['$scope','$http',function($scope,$http){
+    $http.get("assets/data/data.json").then(function(res){
+        $scope.myDemoStreaming = res.data[0].entries;
+    })
 }])
 
-myDemoStreaming.controller('moviesController', ['$scope', function($scope){
-    let isim = 'mehmet';
-}])
+myDemoStreaming.controller('seriesController', ['$scope', function ($scope) {
 
-myDemoStreaming.controller('seriesController', ['$scope', function($scope){
-    
-}])
-
-myDemoStreaming.controller('errorController', ['$scope', function($scope){
-    
-}])
-
-myDemoStreaming.controller('loadingController', ['$scope', function($scope){
-    
 }])

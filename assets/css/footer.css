@@ -100,6 +100,9 @@ footer .social-media {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 991px) {
@@ -111,7 +114,18 @@ footer .social-media {
   }
 }
 
-footer .social-media .apps ul, footer .social-media .app ul {
+footer .social-media .apps img {
+  height: 30px;
+  width: 30px;
+}
+
+footer .social-media .app img {
+  height: 100%;
+  width: 150px;
+}
+
+footer .social-media .apps ul,
+footer .social-media .app ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,12 +135,14 @@ footer .social-media .apps ul, footer .social-media .app ul {
 }
 
 @media screen and (max-width: 991px) {
-  footer .social-media .apps ul, footer .social-media .app ul {
+  footer .social-media .apps ul,
+  footer .social-media .app ul {
     margin-top: 1em;
   }
 }
 
-footer .social-media .apps ul li:not(:last-child), footer .social-media .app ul li:not(:last-child) {
-  margin-right: 2rem;
+footer .social-media .apps ul li img,
+footer .social-media .app ul li img {
+  margin-right: 3rem;
 }
 /*# sourceMappingURL=footer.css.map */

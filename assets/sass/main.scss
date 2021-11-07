@@ -6,58 +6,109 @@
 @import url('footer.css');
 
 main {
-      flex: 1 0 auto;
+    flex: 1 0 auto;
 
-      .navbar {
+    .navbar {
         background-color: var(--navbar);
-        height: 56px;
+        height: 60px;
         display: flex;
         align-items: center;
         position: relative;
-    
+
         &::after {
-            content:'';
+            content: '';
             position: absolute;
-            top:0;
+            top: 0;
             right: 0;
-            left:0;
-            height: 40px;
+            left: 0;
             width: 100%;
-            background: var(--shadow);
+            height: 2px;
+            box-shadow: 1px 1px 15px 0 #000000a3;
         }
-    
+
         h2 {
             color: var(--white);
             font-size: var(--fontl);
         }
     }
 
-      .content {
-          position: relative;
-          padding-top:3em;
-    
+    .content {
+        position: relative;
+        padding-top: 1em;
+
         &::after {
-            content:'';
+            content: '';
             position: absolute;
-            top:0;
+            top: 0;
             right: 0;
-            left:0;
-            height: 50px;
+            left: 0;
             width: 100%;
-            background: var(--shadow);
+            height: 2px;
+            box-shadow: 1px 1px 15px 0 #000000a3;
         }
-    
+
         .box {
-            display: flex;
-            z-index: 1;
-    
-            .series {
-    
-            }
-    
+            margin:2rem 4rem 2rem 0;
+
+            .series,
             .movies {
-    
+                width: 210px;
+
+                .box-content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--footer);
+                    width: 210px;
+                    height: 260px;
+                    margin-bottom: 1rem;
+                    position: relative;
+                    top: 0;
+                    box-shadow: #0000001a 0 10px 10px 0, #00000026 0 14px 25px 0;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                    }
+
+
+                    h3 {
+                        font-size: var(--fontxl);
+                    }
+
+                    &:hover {
+                        box-shadow: none;
+                        top: 1px;
+                    }
+
+                    &::before {
+                        content: '';
+                        background: url('/assets/img/placeholder.png');
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                    }
+                }
+
+                h4 {
+                    font-size: var(--fontl);
+                    color:var(--black);
+                }
+
+                a {
+                    color: var(--white);
+                    font-size: var(--f);
+                }
+
+                span {
+                    color: var(--black);
+                }
             }
+
         }
     }
 

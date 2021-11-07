@@ -1,10 +1,21 @@
 <div class="navbar">
     <div class="container">
-        <h2>Popular {{asd[1]}}</h2>
+        <h2>Popular Movies</h2>
     </div>
 </div>
 <section class="content">
     <div class="container">
-        movies
+        <div class="box d-flex flex-wrap justify-content-between">
+            <div class="movies mx-2" ng-repeat="movie in myDemoStreaming | orderBy:'title'" ng-if="movie.releaseYear >= 2010" ng-show=movie>
+                <!-- {{ filter_expression | filter : expression : comparator : anyPropertyKey}} -->
+                <a href="#!movies">
+                    <div class="box-content mt-5" >
+                        <img src="{{movie.images.PosterArt.url}}" alt="{{movie.title}}">
+                    </div>
+                    <h4>{{movie.title}}</h4>
+                    <h4>{{movie.releaseYear}}</h4>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
