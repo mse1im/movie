@@ -49,7 +49,6 @@ myDemoStreaming.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: '/dist/home.html',
-            controller: 'homeController'
         })
         .when('/movies', {
             templateUrl: '/dist/movies.html',
@@ -78,6 +77,8 @@ myDemoStreaming.controller('moviesController',['$scope','$http',function($scope,
     })
 }])
 
-myDemoStreaming.controller('seriesController', ['$scope', function ($scope) {
-
+myDemoStreaming.controller('seriesController',['$scope','$http',function($scope,$http){
+    $http.get("assets/data/data.json").then(function(res){
+        $scope.myDemoStreaming = res.data[0].entries;
+    })
 }])

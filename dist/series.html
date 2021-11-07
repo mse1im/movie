@@ -5,6 +5,16 @@
 </div>
 <section class="content">
     <div class="container">
-        series
+        <div class="box d-flex flex-wrap justify-content-between">
+            <div class="series mx-2" ng-repeat="serie in myDemoStreaming | orderBy:'title'" ng-if="serie.releaseYear >= 2010 && serie.programType == 'series'" ng-show=serie>
+                <a href="#!series">
+                    <div class="box-content mt-5" >
+                        <img src="{{serie.images.PosterArt.url}}" alt="{{serie.title}}">
+                    </div>
+                    <h4>{{serie.title}}</h4>
+                    <h4>{{serie.releaseYear}}</h4>
+                </a>
+            </div>
+        </div>
     </div>
 </section>

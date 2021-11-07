@@ -114,6 +114,12 @@ footer .social-media {
   }
 }
 
+footer .social-media .apps li:hover img {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
 footer .social-media .apps img {
   height: 30px;
   width: 30px;
