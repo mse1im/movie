@@ -61,14 +61,6 @@ myDemoStreaming.config(['$routeProvider', function ($routeProvider) {
         .when('/series', {
             templateUrl: '/dist/series.html',
             controller: 'seriesController'
-        })
-        .when('/error', {
-            templateUrl: '/dist/error.html',
-            controller: 'errorController'
-        })
-        .when('/loading', {
-            templateUrl: '/dist/loading.html',
-            controller: 'loadingController'
         }).otherwise({
             redirectTo: '/home'
         });
@@ -79,7 +71,6 @@ myDemoStreaming.controller('moviesController',['$scope','$http',function($scope,
     $scope.loaded = false;
     $http.get("assets/data/data.json").then(function(res){
     $scope.myDemoStreaming = res.data[0].entries;
-    $scope.length = res.data[0].entries.length;
     $scope.loaded = true;
     }).catch(err => {
         $scope.error = "Oops something went wrong...";
@@ -90,7 +81,6 @@ myDemoStreaming.controller('seriesController',['$scope','$http',function($scope,
     $scope.loaded = false;
     $http.get("assets/data/data.json").then(function(res){
     $scope.myDemoStreaming = res.data[0].entries;
-    $scope.length = res.data[0].entries.length;
     $scope.loaded = true;
     }).catch(err => {
         $scope.error = "Oops something went wrong...";

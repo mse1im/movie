@@ -101,9 +101,20 @@ footer {
         }
 
         .app {
-            img {
-                height: 100%;
-                width: 150px;
+            ul {
+
+                @media screen and (max-width: 991px) {
+                    flex-direction: column;
+
+                    img {
+                        margin-top:1rem;
+                    }
+                }
+
+                img {
+                    height: 100%;
+                    width: 150px;
+                }
             }
         }
 
