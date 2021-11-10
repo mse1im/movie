@@ -17,7 +17,6 @@ window.addEventListener("load", () => {
             mobileNav.classList.add("d-block")
         }
     })
-    themeSchema();
 
     checkBox.forEach(item => {
         item.addEventListener("click", function () {
@@ -44,45 +43,6 @@ window.addEventListener("load", () => {
             })
         }
     }
+
+    themeSchema();
 })
-
-let myDemoStreaming = angular.module('myDemoStreaming', ['ngRoute','ngAnimate']);
-
-myDemoStreaming.config(['$routeProvider', function ($routeProvider) {
-
-    $routeProvider
-        .when('/home', {
-            templateUrl: '/dist/home.html',
-        })
-        .when('/movies', {
-            templateUrl: '/dist/movies.html',
-            controller: 'moviesController'
-        })
-        .when('/series', {
-            templateUrl: '/dist/series.html',
-            controller: 'seriesController'
-        }).otherwise({
-            redirectTo: '/home'
-        });
-
-}]);
-
-myDemoStreaming.controller('moviesController',['$scope','$http',function($scope,$http){
-    $scope.loaded = false;
-    $http.get("assets/data/data.json").then(function(res){
-    $scope.myDemoStreaming = res.data[0].entries;
-    $scope.loaded = true;
-    }).catch(err => {
-        $scope.error = "Oops something went wrong...";
-    })
-}])
-
-myDemoStreaming.controller('seriesController',['$scope','$http',function($scope,$http){
-    $scope.loaded = false;
-    $http.get("assets/data/data.json").then(function(res){
-    $scope.myDemoStreaming = res.data[0].entries;
-    $scope.loaded = true;
-    }).catch(err => {
-        $scope.error = "Oops something went wrong...";
-    })
-}])
