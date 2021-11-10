@@ -125,7 +125,19 @@ footer .social-media .apps img {
   width: 30px;
 }
 
-footer .social-media .app img {
+@media screen and (max-width: 991px) {
+  footer .social-media .app ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .social-media .app ul img {
+    margin-top: 1rem;
+  }
+}
+
+footer .social-media .app ul img {
   height: 100%;
   width: 150px;
 }
