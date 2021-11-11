@@ -1,22 +1,31 @@
-<div class="navbar">
-    <div class="container">
-        <h2>Popular Series</h2>
-    </div>
-</div>
-<section class="content">
-    <div class="container">
-        <div ng-if="error" style="color:black">{{error}}</div>
-        <div ng-if="!loaded && !error" style="color:black">Loading...</div>
-        <div class="box d-flex flex-wrap justify-content-between" ng-if="loaded">
-            <div class="series mx-2" ng-if="serie.releaseYear >= 2010 && serie.programType == 'series'" ng-repeat="serie in myDemoStreaming | orderBy:'title' | limitTo: 21" ng-show=serie>
-                <a href="#!series">
-                    <div class="box-content mt-5" >
-                        <img src="{{serie.images['Poster Art'].url}}" alt="{{serie.title}}">
-                    </div>
-                    <h4>{{serie.title}}</h4>
-                    <h4>{{serie.releaseYear}}</h4>
-                </a>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h2>Popular Series</h2>
         </div>
     </div>
-</section>
+    <section class="content">
+        <div class="container">
+            <div ng-if="error" style="color:black">{{error}}</div>
+            <div ng-if="!loaded && !error" style="color:black">Loading...</div>
+            <div class="box d-flex flex-wrap justify-content-between" ng-if="loaded">
+                <div class="series mx-2" ng-if="serie.releaseYear >= 2010 && serie.programType == 'series'" ng-repeat="serie in myDemoStreaming | orderBy:'title' | limitTo: 21" ng-show=serie>
+                    <a href="#!series">
+                        <div class="box-content mt-5" >
+                            <img src="{{serie.images['Poster Art'].url}}" alt="{{serie.title}}">
+                        </div>
+                        <h4>{{serie.title}}</h4>
+                        <h4>{{serie.releaseYear}}</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
